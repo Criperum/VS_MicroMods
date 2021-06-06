@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSModLauncher", "VSModLauncher.csproj", "{203DFBF1-3599-43FD-8487-E1C79C2B788F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6db3e59a-fb6c-4581-b272-873c1a4b27ed} = {6db3e59a-fb6c-4581-b272-873c1a4b27ed}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dmtools", "mods\dmtools\dmtools.csproj", "{6db3e59a-fb6c-4581-b272-873c1a4b27ed}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +22,12 @@ Global
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release x64|Any CPU.Build.0 = Release|Any CPU
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release|Any CPU.Build.0 = Release|Any CPU
+{6db3e59a-fb6c-4581-b272-873c1a4b27ed}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{6db3e59a-fb6c-4581-b272-873c1a4b27ed}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{6db3e59a-fb6c-4581-b272-873c1a4b27ed}.Release x64|Any CPU.ActiveCfg = Release|Any CPU
+{6db3e59a-fb6c-4581-b272-873c1a4b27ed}.Release x64|Any CPU.Build.0 = Release|Any CPU
+{6db3e59a-fb6c-4581-b272-873c1a4b27ed}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{6db3e59a-fb6c-4581-b272-873c1a4b27ed}.Release|Any CPU.Build.0 = Release|Any CPU}
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
