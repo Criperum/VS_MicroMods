@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSModLauncher", "VSModLauncher.csproj", "{203DFBF1-3599-43FD-8487-E1C79C2B788F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{32c9cd8b-5952-4380-af1a-ab4eab13a4ee} = {32c9cd8b-5952-4380-af1a-ab4eab13a4ee}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "healingpractices", "mods\healingpractices\healingpractices.csproj", "{32c9cd8b-5952-4380-af1a-ab4eab13a4ee}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +22,12 @@ Global
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release x64|Any CPU.Build.0 = Release|Any CPU
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release|Any CPU.Build.0 = Release|Any CPU
+{32c9cd8b-5952-4380-af1a-ab4eab13a4ee}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{32c9cd8b-5952-4380-af1a-ab4eab13a4ee}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{32c9cd8b-5952-4380-af1a-ab4eab13a4ee}.Release x64|Any CPU.ActiveCfg = Release|Any CPU
+{32c9cd8b-5952-4380-af1a-ab4eab13a4ee}.Release x64|Any CPU.Build.0 = Release|Any CPU
+{32c9cd8b-5952-4380-af1a-ab4eab13a4ee}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{32c9cd8b-5952-4380-af1a-ab4eab13a4ee}.Release|Any CPU.Build.0 = Release|Any CPU}
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

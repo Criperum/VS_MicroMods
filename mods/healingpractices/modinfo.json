@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "healingpractices",
+  "name": "healingpractices",
+  "author": "Unknown",
+  "description": "To be added",
+  "version": "1.0.0",
+  "dependency": {
+    "game": "1.14.10"
+  }
+}
