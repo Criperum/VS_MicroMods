@@ -9,7 +9,6 @@ namespace healingpractices.src
     public class SecondChanceConfig
     {
         public static SecondChanceConfig Current { get; set; }
-        public string DMUID { get; set; }
         public int MaxLifes { get; set; }
         public int HealWoundTime { get; set; }
 

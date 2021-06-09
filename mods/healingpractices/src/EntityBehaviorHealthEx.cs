@@ -67,10 +67,22 @@ namespace healingpractices.src
                         }
 
                         (entity.World.Api as ICoreServerAPI).SendMessage(player, 0, "You have been wounded.You need 3 days to recover", EnumChatType.Notification);
-                        if (SecondChanceConfig.Current.DMUID != null)
+                        if (entity.World.Api.ModLoader.IsModEnabled("dmtools"))
                         {
-                            var dm = entity.World.PlayerByUid(SecondChanceConfig.Current.DMUID);
-                            (entity.World.Api as ICoreServerAPI).SendMessage(dm, 0, string.Format("Player {0} has been wounded", entity.GetBehavior<EntityBehaviorNameTag>().DisplayName), EnumChatType.Notification);
+                            var dmIDs = entity.World.AllOnlinePlayers.Where(p =>
+                            {
+                                var b = p.WorldData.GetModdata("isDM");
+                                if (b != null)
+                                {
+                                    return b[0] == 1 ? true : false;
+                                }
+                                return false;
+                            }).Select(p => p.PlayerUID);
+                            foreach (var id in dmIDs)
+                            {
+                                var dm = entity.World.PlayerByUid(id);
+                                (entity.World.Api as ICoreServerAPI).SendMessage(dm, 0, string.Format("Player {0} has been wounded", entity.GetBehavior<EntityBehaviorNameTag>().DisplayName), EnumChatType.Notification);
+                            }
                         }
 
                         return;
@@ -78,10 +90,22 @@ namespace healingpractices.src
                     else
                     {
                         (entity.World.Api as ICoreServerAPI).SendMessage(player, 0, "You have been killed. Good luck in your next life", EnumChatType.Notification);
-                        if (SecondChanceConfig.Current.DMUID != null)
+                        if (entity.World.Api.ModLoader.IsModEnabled("dmtools"))
                         {
-                            var dm = entity.World.PlayerByUid(SecondChanceConfig.Current.DMUID);
-                            (entity.World.Api as ICoreServerAPI).SendMessage(dm, 0, string.Format("Player {0} is considered dead", entity.GetBehavior<EntityBehaviorNameTag>().DisplayName), EnumChatType.Notification);
+                            var dmIDs = entity.World.AllOnlinePlayers.Where(p =>
+                            {
+                                var b = p.WorldData.GetModdata("isDM");
+                                if (b != null)
+                                {
+                                    return b[0] == 1 ? true : false;
+                                }
+                                return false;
+                            }).Select(p => p.PlayerUID);
+                            foreach (var id in dmIDs)
+                            {
+                                var dm = entity.World.PlayerByUid(id);
+                                (entity.World.Api as ICoreServerAPI).SendMessage(dm, 0, string.Format("Player {0} is considered dead", entity.GetBehavior<EntityBehaviorNameTag>().DisplayName), EnumChatType.Notification);
+                            }
                         }
                     }
                 }
@@ -104,10 +128,22 @@ namespace healingpractices.src
                         data.WoundsLeft++;
                         data.LastWoundDate = (data.WoundsLeft == SecondChanceConfig.Current.MaxLifes) ? (double?)null : entity.World.Calendar.TotalDays;
                         (entity.World.Api as ICoreServerAPI).SendMessage(player, 0, "You have recovered from wound", EnumChatType.Notification);
-                        if (SecondChanceConfig.Current.DMUID != null)
+                        if (entity.World.Api.ModLoader.IsModEnabled("dmtools"))
                         {
-                            var dm = entity.World.PlayerByUid(SecondChanceConfig.Current.DMUID);
-                            (entity.World.Api as ICoreServerAPI).SendMessage(dm, 0, string.Format("Player {0} has recovered from wound", entity.GetBehavior<EntityBehaviorNameTag>().DisplayName), EnumChatType.Notification);
+                            var dmIDs = entity.World.AllOnlinePlayers.Where(p =>
+                            {
+                                var b = p.WorldData.GetModdata("isDM");
+                                if (b != null)
+                                {
+                                    return b[0] == 1 ? true : false;
+                                }
+                                return false;
+                            }).Select(p => p.PlayerUID);
+                            foreach (var id in dmIDs)
+                            {
+                                var dm = entity.World.PlayerByUid(id);
+                                (entity.World.Api as ICoreServerAPI).SendMessage(dm, 0, string.Format("Player {0} has recovered from wound", entity.GetBehavior<EntityBehaviorNameTag>().DisplayName), EnumChatType.Notification);
+                            }
                         }
                     }
                 }

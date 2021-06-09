@@ -26,13 +26,6 @@ namespace healingpractices.src
             _serverAPI = api;
             _serverAPI.Event.PlayerJoin += OnPlayerJoin;
             _serverAPI.Event.PlayerCreate += OnPlayerCreate;
-
-            api.RegisterCommand("iamdm", "Sets you as a current Dungeon Master", "", (IServerPlayer player, int groupId, CmdArgs args) =>
-             {
-                 SecondChanceConfig.Current.DMUID = player.PlayerUID;
-                 //integrate with DM tools
-                 api.SaveDataFile("SecondChanceConfig.json", SecondChanceConfig.Current);
-             });
         }
         private void OnPlayerJoin(IServerPlayer player)
         {

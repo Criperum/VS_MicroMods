@@ -65,6 +65,18 @@ namespace dmtools.src
                         api.BroadcastMessageToAllGroups(string.Format("User {0} rolled {1} dice and got {2}", player.Entity.GetBehavior<EntityBehaviorNameTag>().DisplayName, die, sum), EnumChatType.Notification);
                     }
                 }, Privilege.chat);
+            api.RegisterCommand("iamdm", "Sets you as a current Dungeon Master", "", (IServerPlayer player, int groupId, CmdArgs args) =>
+            {
+                var option = args.PopWord("yes").ToLower();
+                if (option == "yes")
+                {
+                    player.WorldData.SetModdata("isDM", new byte[] { (byte)1 });
+                }
+                else
+                {
+                    player.WorldData.RemoveModdata("isDM");
+                }
+            });
         }
         private void Event_PlayerJoin(IServerPlayer byPlayer)
         {
