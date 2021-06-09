@@ -1,0 +1,13 @@
+{
+  "type": "code",
+  "modid": "dmtools",
+  "name": "DM Tools",
+  "authors": ["Criperum"],
+  "description": "Some tools for DM on PR servers",
+  "version": "1.0.0",
+  "side": "Server",
+  "requiredOnClient": false,
+  "dependency": {
+    "game": "1.14.10"
+  }
+}
